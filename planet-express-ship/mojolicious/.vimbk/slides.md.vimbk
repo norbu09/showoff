@@ -26,21 +26,84 @@ https://github.com/norbu09/planet-express-ship
                             # js and css files
     /templates              # template tree
 
-!SLIDE 
-# how to get started #
 
 !SLIDE commandline incremental
+# how to get started #
 
     @@@ sh
     $ git clone git://github.com/norbu09/planet-express-ship.git project_name
-    $ grep -r planet-express-ship
-    $ find . -name planet-express-ship
+    $ grep -r planet-express-ship # replace everything with project_name
+    $ find . -name planet-express-ship #rename everything to project_name
     $ curl -X PUT http://127.0.0.1:5984/project_name
-    $ cd db
-    $ ./load_views.sh
+    $ cd db && ./load_views.sh
     $ morbo project_name
+
+    Server available at http://127.0.0.1:3000.
 
 !SLIDE
 # Congratulations! #
 
 you have a working app!
+
+!SLIDE
+# Authentication #
+
+    @@@ perl
+    # Authenticated user section
+    group {
+        under sub {
+            my $self = shift;
+
+            # Authenticated
+            return 1 if $self->auth();
+            ...
+
+
+!SLIDE
+# Admin Users #
+
+    @@@ perl
+    # Admin section
+    group {
+        under '/admin' => sub {
+            my $self = shift;
+
+            # Authenticated
+            return 1 if ($self->auth() and 
+                $self->session->{admin});
+            ...
+
+!SLIDE
+# User document #
+
+    @@@ javascript
+    {
+       _id: "4e723e4457fcfd640e1858ab7f000a59",
+       _rev: "1-b4907e749fcf64d08a3e23b6ed3f4976",
+       last_login: 1341024403,
+       active: 1,
+       name: "Lenz Gschwendtner",
+       username: "lenz@springtimesoft.com",
+       password: "password hash",
+       type: "user",
+       role: "admin",
+    }
+
+!SLIDE
+# request routing #
+
+    @@@ perl
+    get '/signup';
+
+    get '/users/:id' => sub {
+        my $self = shift;
+
+        $self->stash(user => 
+            $self->get_user($self->param('id')));
+    } => 'user';
+
+    post '/checkin' => sub {
+        my $self = shift;
+        $self->add_checkin();
+        $self->redirect_to('/dashboard');
+    };
