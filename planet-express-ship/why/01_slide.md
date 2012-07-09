@@ -1,0 +1,49 @@
+!SLIDE 
+# Planet Express Ship #
+
+with Mojo, CouchDB and Bootstrap
+
+!SLIDE full-page
+
+![planet-express-ship](planet-express.jpg)
+
+!SLIDE
+# Rapid Prototyping #
+
+quickly try ideas online
+
+!SLIDE bullets
+# rough timeline #
+
+* idea
+* prototype
+* ↱  test
+* pivot ↲
+* _overnight_ success
+
+!SLIDE
+# goal #
+
+minimize time between idea and success
+
+!SLIDE
+# start small - grow it #
+
+- less code ⇾ easier to change
+- smaller code base ⇾ faster to work with
+- fewer files ⇾ better overview
+- existing frameworks ⇾ faster development
+
+!SLIDE
+# stop talking! #
+
+give me that small and flexible piece of code based on existing
+frameworks!
+
+
+!SLIDE bullets
+# Planet Express Ship #
+
+- Mojolicious::Lite ⇾ _tiny_
+- CouchDB ⇾ _flexible_
+- Bootstrap ⇾ _fast_

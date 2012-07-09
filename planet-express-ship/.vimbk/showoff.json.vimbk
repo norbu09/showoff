@@ -1,0 +1,10 @@
+{ "name": "ci_talk",
+  "description": "Continous Integration for perl projects", 
+  "templates" : {
+      "special" : "simple.tpl"
+  },
+  "sections": [
+    {"section":"git"},
+    {"section":"jenkins"},
+    {"section":"gio"}
+]}

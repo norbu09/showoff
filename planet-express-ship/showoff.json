@@ -1,0 +1,10 @@
+{ "name": "planet-express-ship",
+  "description": "Planet Express Ship", 
+  "templates" : {
+      "special" : "simple.tpl"
+  },
+  "sections": [
+    {"section":"why"},
+    {"section":"mojolicious"},
+    {"section":"couch"}
+]}

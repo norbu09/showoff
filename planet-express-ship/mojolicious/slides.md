@@ -1,0 +1,46 @@
+!SLIDE
+# where to get it from #
+
+https://github.com/norbu09/planet-express-ship
+
+!SLIDE
+# package contents #
+
+* Login/User handling
+* Form Validation
+* GMail/GoogleApps support
+* micro CMS
+* CDN storage
+* Facebook Authentication
+* Invite Codes
+
+!SLIDE
+# Package layout #
+
+    /Mojolicious/Plugin     # plugin directory
+    /bin                    # commandline tools
+    /css                    # bootstrap less files
+    /db                     # CouchDB view files
+    /js                     # bootstrap js files
+    /public                 # static files and compiled 
+                            # js and css files
+    /templates              # template tree
+
+!SLIDE 
+# how to get started #
+
+!SLIDE commandline incremental
+
+    @@@ sh
+    $ git clone git://github.com/norbu09/planet-express-ship.git project_name
+    $ grep -r planet-express-ship # replace everything with project_name
+    $ find . -name planet-express-ship #rename everything to project_name
+    $ curl -X PUT http://127.0.0.1:5984/project_name
+    $ cd db
+    $ ./load_views.sh
+    $ morbo project_name
+
+!SLIDE
+# Congratulations! #
+
+you have a working app!
